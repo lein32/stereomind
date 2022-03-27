@@ -1,0 +1,386 @@
+/* Global */
+:root {
+    /* Color */
+    --color-white: #ffffff;
+    --color-light-white: #eeeeee;
+    --color-dark-white: #bdbdbd;
+    --color-dark-grey: #4d4d4d;
+    --color-grey: #7c7979;
+    --color-light-grey: #aaa8a8;
+    --color-blue: #73aace;
+    --color-red: #2c1a1a;
+    --color-purple: #241e27;
+    --color-yellow: #fff7d1;
+    --color-black: #000000;
+
+    /* Font size */
+    --font-large: 54px;
+    --font-medium: 28px;
+    --font-regular: 18px;
+    --font-small: 16px;
+    --font-micro: 14px;
+    --font-smallest: 12px;
+
+    /* Font weight */
+    --weight-bold: 700;
+    --weight-medium: 500;
+    --weight-regular: 400;
+    --weight-light: 200;
+
+    /* Size */
+    --size-border-radius: 4px;
+
+    /* Animation */
+    --animation-duration: 300ms;
+}
+
+/* Universal tags */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 0;
+    height: 100%;
+    cursor: default;
+}
+
+ul {
+    padding-left: 0;
+}
+
+li {
+    list-style: none;
+}
+
+/* Typography */
+h1 {
+    font-size: var(--font-large);
+    font-weight: var(--weight-bold);
+}
+
+h2 {
+    color: var(--color-white);
+    font-weight: var(--weight-medium);
+}
+
+h3 {
+    font-size: var(--font-small);
+    font-weight: var(--weight-light);
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color:var(--color-dark-grey);
+}
+
+/* Common Section */
+.section__title {
+    margin: 0;
+    padding-top: 100px;
+    padding-bottom: 80px;
+    letter-spacing:0.3em;
+}
+
+
+/* Navi */
+#navi {
+    position: fixed;
+    top: 60px;
+    left: 32px;
+    font-family: 'Roboto', sans-serif;
+    z-index: 2;
+}
+
+.navi__menu__item {
+    letter-spacing:0.3em;
+    padding: 16px;
+    text-transform: uppercase;
+    font-weight: var(--weight-light);
+    font-size: var(--font-smallest);
+    color: var(--color-grey);
+    border-style: solid;
+    border-width: 0 0 0 1px;
+    border-color: var(--color-white);
+    cursor: pointer;
+}
+
+.navi__menu__item:hover {
+    color: var(--color-white);
+}
+
+.navi__menu__item.is-active {
+    color: var(--color-white);
+}
+
+/* Top */
+#top {
+    text-align: center;
+    width:100%;
+    height:100%;
+    position:relative;
+    margin:0;
+    display:flex;
+}
+
+.top__bg {
+    position:fixed;
+    background: url('imgs/cover.png') center/cover no-repeat;
+    text-align: center;
+    width:100vw;
+    height:100vh;
+    z-index:-1;
+    margin:0;
+    display:flex;
+    flex-flow:column nowrap;
+}
+
+.top__container {
+    width:100%;
+    height:100%;
+}
+
+.top__space {
+    width:100%;
+    height: 80%;
+}
+
+.top__title {
+    margin: 0px;
+    color: var(--color-white);
+    font-weight: var(--weight-light);
+    letter-spacing: 0.3em;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1000ms ease-out;
+}
+
+.top__description {
+    margin: 0px;
+    color: var(--color-light-grey);
+    font-weight: var(--weight-light);
+    letter-spacing: 0.3em;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1000ms ease-out;
+}
+
+/* Track List */
+#tracklist {
+    position: relative;
+    text-align: center;
+    color: var(--color-white);
+    display: flex;
+    padding-bottom: 170px;
+    position: relative;
+}
+
+.tracklist__bg {
+    position: absolute;
+    background-color: var(--color-black);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.77;
+}
+
+.tracklist__text {
+    transform: translateY(30px);
+    transition: all 500ms ease-in-out;
+    opacity: 0;
+}
+
+.inline {
+    border-width: 0 0 1px 0;
+    border-color: var(--color-grey);
+    border-style: solid;
+    padding: 16px;
+}
+
+.tracklist__item {
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: var(--color-dark-grey);
+    transform: translateY(30px);
+    transition: all 300ms ease-in-out;
+    opacity: 0;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+
+.tracklist__container {
+    margin: auto;
+    width: 500px;
+}
+
+.num {
+    flex-basis:20%;
+    text-align: right;
+    padding-right: 40px;
+    color: var(--color-grey);
+}
+
+.title {
+    flex-basis: 50%;
+    text-align: left;
+    padding-left: 40px;
+}
+
+.artist {
+    flex-basis:30%;
+    text-align: left;
+    padding-left: 50px;
+}
+
+/* Credit */
+#credit {
+    background-color: var(--color-red);
+    display: flex;
+    padding-bottom: 130px;
+}
+
+.credit__container {
+    text-align: center;
+    margin: auto;
+    width:600px;
+}
+
+.list {
+    text-align: center;
+    color: var(--color-white);
+}
+
+.credit__item {
+    display: flex;
+    justify-content: center;
+    padding: 16px;
+    font-size:var(--font-small);
+}
+
+.role {
+    flex-basis:48%;
+    text-align: left;
+    padding-left: 140px;
+}
+
+.name {
+    flex-basis:52%;
+    padding-left: 0px;
+    text-align: left;
+}
+
+.download {
+    display:inline-block;
+    margin-top: 80px;
+    width: 230px;
+    height: 80px;
+    line-height: 80px;
+    border: 1px solid var(--color-white);
+    font-weight: var(--weight-medium);
+}
+
+.download:hover {
+    border: 1px solid var(--color-dark-grey);
+}
+
+/* Contact */
+.contact {
+    position: relative;
+    color: var(--color-light-white);
+    font-weight: var(--weight-light);
+    display: flex;
+    justify-content: center;
+    margin:auto;
+}
+
+.contact__container {
+    position: absolute;
+    background-color: var(--color-black);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    z-index: -1;
+}
+
+.owner {
+    margin: 0;
+    padding:100px;
+    font-weight: var(--weight-bold);
+    color:var(--color-light-grey);
+}
+
+@media screen and (max-width: 768px) {
+    :root {
+        /* Font size */
+        --font-large: 32px;
+        --font-medium: 18px;
+        --font-regular: 16px;
+        --font-small: 14px;
+        --font-micro: 12px;
+        }
+
+    #navi {
+        display: none;
+    }
+
+    .tracklist {
+        padding-bottom: 100px;
+    }
+
+    .num {
+        padding-right: 30px;
+        flex-basis: 15%;
+    }
+
+    .title {
+        padding-left: 0px;
+        flex-basis: 55%;
+    }
+
+    .artist {
+        flex-basis: 30%;
+        padding-left: 30px;
+    }
+
+    .credit {
+        padding-bottom: 60px;
+    }
+
+    .download {
+        display:inline-block;
+        margin-top: 40px;
+    }
+
+    .role {
+        padding-left: 30px;
+    }
+    
+    .name {
+        padding-left: 20px;
+    }
+
+    .owner {
+        font-size: var(--font-micro);
+        padding:50px 0;
+    }
+}
